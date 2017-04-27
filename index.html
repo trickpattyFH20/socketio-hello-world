@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://cdn.socket.io/socket.io-1.7.3.js"></script>
+    <script>
+    var socket = io.connect('localhost:8080');
+
+    socket.on('connect', () => {
+        console.log('succesfully established websocket connection!');
+        console.log(socket);
+    });
+
+    socket.on('woohoo_yay_websockets', data => {
+        console.log(data);
+    });
+
+    socket.on('another_example_event', data => {
+        console.log(data);
+    });
+    </script>
+</head>
+    <body>
+        <h1>
+            look at the console log to see socket hello world events
+        </h1>
+    </body>
+</html>
